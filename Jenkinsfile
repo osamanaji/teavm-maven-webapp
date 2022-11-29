@@ -22,6 +22,13 @@ pipeline {
                 sh 'mvn package'
             }
         }
+	    stage('Deploy') {
+            steps {
+               sshagent(['tomcat_server']) {
+		sh 'scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/teavm-maven-webapp/targetteavm-maven-webapp-1.0-SNAPSHOT.war ubuntu@35.171.157.31:/opt/apache-tomcat-8.5.84/webapps'
+			}
+            }
+        }
 	/* stage('Notify') {
             steps {
 		    if {
