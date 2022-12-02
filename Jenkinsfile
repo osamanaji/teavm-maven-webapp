@@ -22,7 +22,7 @@ pipeline {
                 sh 'mvn package'
             }
         }
-	    stage('Test') {
+	    stage('Hello') {
             steps {
                 echo "Hello World for develop branch"
             }
