@@ -22,6 +22,11 @@ pipeline {
                 sh 'mvn package'
             }
         }
+	    stage('Hello') {
+            steps {
+                echo "Hello World for develop branch"
+            }
+        }
 	   /* stage('Deploy') {
             steps {
                sshagent(['tomcat_server']) {
