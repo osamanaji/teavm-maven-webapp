@@ -107,4 +107,11 @@
       </plugin>
     </plugins>
   </build>
+<distributionManagement>
+    <repository>
+        <id>jfrog</id>
+        <name>DevOps-releases</name>
+        <url>http://localhost:8081/artifactory/maven-local-release</url>
+    </repository>
+</distributionManagement>
 </project>
