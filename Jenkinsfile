@@ -18,11 +18,11 @@ sh 'mvn package'
     }
   }
   
-   stage('Print-working-directory') {
-    steps {
-sh 'pwd'
-    }
-  }
+   //stage('Print-working-directory') {
+    //steps {
+//sh 'pwd'
+  //  }
+ // }
 }
 
 }
