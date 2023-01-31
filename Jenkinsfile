@@ -17,6 +17,12 @@ sh 'mvn compile'
 sh 'mvn package'
     }
   }
+  
+   stage('Print-working-directory') {
+    steps {
+sh 'pwd'
+    }
+  }
 }
 
 }
