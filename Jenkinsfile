@@ -1,11 +1,28 @@
-node {  
-    stage('Build') { 
-        sh 'mvn compile'
+pipeline {
+agent any
+stages {
+  stage('checkout') {
+    steps {
+      checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'bf75e321-78e0-4cdd-b25f-ba02ffd21d00', url: 'https://github.com/osamanaji/teavm-maven-webapp.git']])
     }
-    stage('Test') { 
-        sh 'mvn test'
+  }
+stage('compile') {
+    steps {
+sh 'mvn compile'
     }
-    stage('Package') { 
-       sh 'mvn package'
+  }
+  
+  stage('package') {
+    steps {
+sh 'mvn package'
     }
+  }
+  
+   /*stage('Print-working-directory') {
+    steps {
+sh 'pwd'
+    }
+  }*/
+}
+
 }
