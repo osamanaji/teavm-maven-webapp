@@ -28,7 +28,7 @@ sh 'pwd'
   stage('TomcatDeply') {
     steps {
     sshagent(['tomcat_server']) {
-sh 'scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/teavm-maven-webapp-pipeline/target/teavm-maven-webapp-1.0-RELEASE.war ubuntu@ec2-54-93-36-119.eu-central-1.compute.amazonaws.com:/var/lib/tomcat9/webapps/'
+sh 'scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/teavm-maven-webapp-pipeline/target/teavm-maven-webapp-1.0-RELEASE.war ubuntu@172.31.22.111:/var/lib/tomcat9/webapps/'
 }
     }
   }
